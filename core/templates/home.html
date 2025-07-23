@@ -2,18 +2,23 @@
 <html>
 <head>
     <title>Food Shop</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
 </head>
 <body>
     <h1>Available Food Items</h1>
     <ul>
         {% for item in items %}
             <li>
-                <strong>{{ item.name }}</strong> - Ksh {{ item.price }}<br>
-                {{ item.description }}
+                <div class="name"><strong>{{ item.name }}</strong></div>
+                <div class="price">Ksh {{ item.price }}</div>
+                <div class="description">{{ item.description }}</div>
             </li>
         {% empty %}
             <li>No items available.</li>
         {% endfor %}
     </ul>
+
+    <script src="{% static 'core/script.js' %}"></script>
 </body>
 </html>
