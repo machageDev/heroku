@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Shop</title>
+</head>
+<body>
+    <h1>Available Food Items</h1>
+    <ul>
+        {% for item in items %}
+            <li>
+                <strong>{{ item.name }}</strong> - Ksh {{ item.price }}<br>
+                {{ item.description }}
+            </li>
+        {% empty %}
+            <li>No items available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
