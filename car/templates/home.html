@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mustang | Car Shop</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Available Cars</h1>
+    <div class="container">
+        {% for car in cars %}
+        <div class="car-card">
+            <img src="{{ car.image.url }}" alt="{{ car.name }}">
+            <h2>{{ car.name }}</h2>
+            <p>Ksh {{ car.price }}</p>
+            <a href="{% url 'add_to_cart' car.id %}" class="btn">Add to Cart</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
